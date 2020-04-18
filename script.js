@@ -41,8 +41,20 @@ function Journal(volume){
         throw "Количество страниц";
         _pages = pages;
     }
+    this.getPages = function (){
+        return_pages;
+    }
     this.getYear = function(){
         return this.year;
     }
 }
 
+var journal1 = new Journal('№ 11');
+this.label = 'Print';
+this.year = '2001';
+this.id = '382';
+
+var journal2 = new Journal('№ 12');
+this.label = 'New print';
+this.year = '2004';
+this.id = '301';
