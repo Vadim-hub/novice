@@ -1,77 +1,35 @@
-function Books(label, year, id, pages){
-    this.label = label;
-    this.year = year;
-    this.id = id;
-    this.pages = pages;    
-    this.getPages = function(){
-        return this.pages;
-    };
-};
 
-function Book(title, author, amount){
-    Books.call(this);
-    this.title = title;
-    this.author = author;
-    this.amount = amount; 
-};
+const x  = document.getElementById('xx').value;
+const y = document.getElementById('yy').value;
 
-var book1 = new Book('Tales', 'John', '15');
-book1.label = 'Literatura';
-book1.year = '2019';
-book1.id = '1';
-book1.pages = '110';
+if (true) {
+    let sum = (x, y) => x + y;
+    document.getElementById('result').innerHTML = sum (x, y);
+    document.getElementById('el1').addEventListener('click', sum (x, y));
+  };
 
-var book2 = new Book('New tales', 'Ian', '20');
-book2.label = 'New literatura';
-book2.year = '2020';
-book2.id = '2';
-book2.pages = '125';
+  if (true) {
+    let razn = (x, y) => x - y;
+    document.getElementById('result').innerHTML = razn (x, y);
+    document.getElementById('el2').addEventListener('click', razn (x, y));
+  };
 
-console.log(book1.getPages());
-console.log(book2.getPages());
+  if (true) {
+    let multi = (x, y) => x*y;
+    document.getElementById('result').innerHTML = multi (x, y);
+    document.getElementById('el3').addEventListener('click', multi (x, y));
+  };
 
-console.log(book1.year);
-console.log(book2.year);
+  if (true) {
+    let delen = (x, y) => x/y;
+    document.getElementById('result').innerHTML = delen (x, y);
+    document.getElementById('el4').addEventListener('click', delen (x, y));
+  };
 
-function Journal(volume, _pages){
-    Books.call(this);
-    this.volume = volume;
-    this._pages = pages;
-    this.setPages = function (pages){
-        if(pages <= 0 || pages >= 32)
-        throw "Количество страниц не более 32";
-        _pages = pages;
-    };
-    this.getPages = function (){
-        return _pages;
-    };
-    this.getYear = function(){
-        return this.year;
-    };
-};
+  if (true) {
+    let square = (x, y) => x*2;
+    document.getElementById('result').innerHTML = square (x, y);
+    document.getElementById('el5').addEventListener('click', square (x, y));
+  };
 
-var journal1 = new Journal('№ 11');
-journal1.label = 'Print';
-journal1.year = '2001';
-journal1.id = '382';
-journal1.pages = '28';
-journal1._pages = '28';
-
-var journal2 = new Journal('№ 12');
-journal2.label = 'New print';
-journal2.year = '2004';
-journal2.id = '301';
-journal2.pages = '35';
-journal2._pages = '35';
-
-console.log(journal1.volume);
-console.log(journal2.volume);
-
-console.log(journal1.label);
-console.log(journal2.label);
-
-console.log(journal1.getYear());
-console.log(journal2.getYear());
-
-console.log(journal1.getPages());
-console.log(journal2.getPages());
+ 
