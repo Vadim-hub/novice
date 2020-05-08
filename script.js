@@ -36,7 +36,7 @@ console.log(book2.year);
 function Journal(volume, _pages){
     Books.call(this);
     this.volume = volume;
-    this._pages = pages;
+    this._pages = _pages;
     this.setPages = function (pages){
         if(pages <= 0 || pages >= 32)
         throw "Количество страниц не более 32";
@@ -50,19 +50,17 @@ function Journal(volume, _pages){
     };
 };
 
-var journal1 = new Journal('№ 11');
+var journal1 = new Journal('№ 11', '28');
 journal1.label = 'Print';
 journal1.year = '2001';
 journal1.id = '382';
 journal1.pages = '28';
-journal1._pages = '28';
 
-var journal2 = new Journal('№ 12');
+var journal2 = new Journal('№ 12', '35');
 journal2.label = 'New print';
 journal2.year = '2004';
 journal2.id = '301';
 journal2.pages = '35';
-journal2._pages = '35';
 
 console.log(journal1.volume);
 console.log(journal2.volume);
