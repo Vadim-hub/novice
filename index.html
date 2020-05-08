@@ -2,11 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+    <div class="main">
+    <div class="field">
+            <label for="name">Имя</label>
+            <input id="name" type="text">
+    </div>
+    <div class="field">
+            <label for="surname">Фамилия</label>
+            <input id="surname" type="text">
+    </div>
+    <div class="field">
+            <label for="secondName">Отчество</label>
+            <input id="secondName" type="text">
+    </div>
+    <div class="field">
+            <label for="age">Возраст</label>
+            <input id="age" type="text">
+    </div>
+    <div class="field">
+            <label for="profAge">Стаж</label>
+            <input id="profAge" type="text"></div>
+    <div class="field">
+            <label for="date">Дата принятия на работу</label>
+            <input id="date" type="text">
+        </div>
+    </div>
     
+    <p><button onclick="someFunction()">Сохранить</button></p>
+
+        <p><button onclick="myFunction1()">Сохранить</button></p>
+    
+        <!-- <p><a href="1.html"></a></p> -->
+    
+        <p><button onclick="myFunction2()">Очистить</button></p>
+       
+     <table id="myTable" border="1">
+        <tr>
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Отчество</td>
+            <td>Возраст</td>
+            <td>Стаж</td>
+            <td>Дата принятия на работу</td>
+        </tr>
+        <tr id="myTD">
+           <td>Bon</td>
+           <td>Bon</td>
+           <td>Bon</td>
+           <td>Bon</td>
+           <td>Bon</td>
+           <td>Bon</td> 
+        </tr>
+
+        <tr id="newTD">
+           <td id="n">Bon2</td>
+           <td id="s">Bon2</td>
+           <td id="sn">Bon2</td>
+           <td id="a">Bon2</td>
+           <td id="pa">Bon2</td>
+           <td id="d">Bon2</td> 
+        </tr>
+        
+    </table>
+
     <script src="./script.js"></script>
 </body>
 </html>
