@@ -1,44 +1,63 @@
 
-function sum () {
-    var x = document.getElementById('xx').value;
-    var y = document.getElementById('yy').value;
-    var z = x + y;
-    document.getElementById('result').innerHTML = "Итого получится" + z;
+let x = document.getElementById('xx');
+let y = document.getElementById('yy');
+
+  let sum = (x, y) => {
+  let xNew = Number(x.value);
+  let yNew = Number(y.value);
+  return xNew + yNew;
+  };
+
+  /* function sum(x, y){
+    let xNew = Number(x.value);
+    let yNew = Number(y.value);
+    return xNew + yNew;
+    };
+ */
+
+  let razn = (x, y) => {
+  let xNew = Number(x.value);
+  let yNew = Number(y.value);
+  return xNew - yNew;
+ };
+
+  let multi = (x, y) => {
+  let xNew = Number(x.value);
+  let yNew = Number(y.value);
+  return xNew*yNew;
 };
 
-function razn () {
-    var x = document.getElementById('xx').value;
-    var y = document.getElementById('yy').value;
-    var z = x - y;
-    document.getElementById('result').innerHTML = "Итого получится" + z;
+  let delen = (x, y) => {
+  let xNew = Number(x.value);
+  let yNew = Number(y.value);
+  return xNew/yNew;
 };
 
-function multi () {
-    var x = document.getElementById('xx').value;
-    var y = document.getElementById('yy').value;
-    var z = x*y;
-    document.getElementById('result').innerHTML = "Итого получится" + z;
+ let square = (x, y) => {
+  let xNew = Number(x.value);
+  let yNew = Number(y.value);
+  return xNew**2;
 };
 
-function delen () {
-    var x = document.getElementById('xx').value;
-    var y = document.getElementById('yy').value;
-    var z = x/y;
-    document.getElementById('result').innerHTML = "Итого получится" + z;
+document.getElementById('el1').onclick = function() {
+alert(sum (x, y));
 };
 
-function square () {
-    var x = document.getElementById('xx').value;
-    var y = document.getElementById('yy').value;
-    var z = x**2;
-    document.getElementById('result').innerHTML = "Итого получится" + z;
+document.getElementById('el2').onclick = function() {
+  alert(razn(x, y));
 };
 
-document.getElementById('el1').addEventListener('click', sum);
-document.getElementById('el2').addEventListener('click', razn);
-document.getElementById('el3').addEventListener('click', multi);
-document.getElementById('el4').addEventListener('click', delen);
-document.getElementById('el5').addEventListener('click', square);
+document.getElementById('el3').onclick = function() {
+  alert(multi(x, y));
+};
 
+document.getElementById('el4').onclick = function() {
+  alert(delen(x, y));
+};
 
+document.getElementById('el5').onclick = function() {
+  alert(square(x, y));
+};
 
+/* document.getElementById('result').innerHTML = sum (x, y); */
+ 
