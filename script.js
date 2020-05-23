@@ -1,77 +1,144 @@
-function Books(label, year, id, pages){
-    this.label = label;
-    this.year = year;
-    this.id = id;
-    this.pages = pages;    
-    this.getPages = function(){
-        return this.pages;
-    };
-};
 
-function Book(title, author, amount){
-    Books.call(this);
-    this.title = title;
-    this.author = author;
-    this.amount = amount; 
-};
+class Employee {
+    constructor(name, surname, secondName, age, profAge, date) {
+        this.name = name;
+        this.surname = surname;
+        this.secondName = secondName;
+        this.age = age;
+        this.profAge = profAge;
+        this.date = date;
+    }
+     
+get name() {
+    return this.name = document.getElementById('name');
+} 
+set name(value) {
+    let nameNew = document.getElementById('nam');
+    nameNew.innerHTML = name.value;
+}
+get surname() {
+    return this.surname = document.getElementById('surname');
+}
+set surname(value) {
+    let surnameNew = document.getElementById('sur');
+    surnameNew.innerHTML = surname.value;
+}
+get secondName() {
+    return this.secondName = document.getElementById('secondName');
+}
+set secondName(value) {
+    let secondNameNew = document.getElementById('sn');
+    secondNameNew.innerHTML = secondName.value;
+}
+get age() {
+    return this.age = document.getElementById('age');
+}
+set age(value) {
+    let ageNew = document.getElementById('ag');
+    ageNew.innerHTML = age.value;
+}
+get profAge() {
+    return this.profAge = document.getElementById('profAge');
+}
+set profAge(value) {
+    let profAgeNew = document.getElementById('pa');
+    profAgeNew.innerHTML = profAge.value;
+}
+get date() {
+    return this.date = document.getElementById('date');
+    }
+set date(value) {
+    let dateNew = document.getElementById('dat');
+    dateNew.innerHTML = date.value;
+}
+}
 
-var book1 = new Book('Tales', 'John', '15');
-book1.label = 'Literatura';
-book1.year = '2019';
-book1.id = '1';
-book1.pages = '110';
+class Worker extends Employee {
+    constructor(prof, spec) {
+    super(name, surname, secondName, age, profAge, date);
+    this.prof = prof;
+    this.spec = spec;
+    }
+    get prof() {
+        return this.prof = document.getElementById('prof');
+    } 
+    set prof(value) {
+        let profNew = document.getElementById('pr');
+        profNew.innerHTML = prof.value;
+    }
+    get spec() {
+        return this.spec = document.getElementById('spec');
+    }
+    set spec(value) {
+        let specNew = document.getElementById('sp');
+        specNew.innerHTML = spec.value;
+    }
+    double(){
+        super.name();
+        super.name(value);
+        super.surname();
+        super.surname(value);
+        super.secondName();
+        super.secondName(value);
+        super.age();
+        super.age(value);
+        super.profAge();
+        super.profAge(value);
+        super.date();
+        super.date(value);
+    }    
+}
 
-var book2 = new Book('New tales', 'Ian', '20');
-book2.label = 'New literatura';
-book2.year = '2020';
-book2.id = '2';
-book2.pages = '125';
+document.getElementById('btn').addEventListener('click', () =>{
+    let employee = new Employee(); 
+    console.log(employee);
+    var p = document.getElementById("newTD");
+    var p_prime = p.cloneNode(true);
+    document.getElementById("myTable").appendChild(p_prime);
+    this.name.value = "";
+    this.surname.value = "";
+    this.secondName.value = "";
+    this.age.value = "";
+    this.profAge.value = "";
+    this.date.value = "";    
+});
 
-console.log(book1.getPages());
-console.log(book2.getPages());
+document.getElementById('btn2').addEventListener('click', () =>{
+    let worker = new Worker(); 
+    console.log(worker);
+    var w = document.getElementById("myTD");
+    var w_prime = w.cloneNode(true);
+    document.getElementById("newTable").appendChild(w_prime);
+    this.name.value = "";
+    this.surname.value = "";
+    this.secondName.value = "";
+    this.age.value = "";
+    this.profAge.value = "";
+    this.date.value = "";
+    this.prof.value = "";
+    this.spec.value = "";    
+});
 
-console.log(book1.year);
-console.log(book2.year);
 
-function Journal(volume, _pages){
-    Books.call(this);
-    this.volume = volume;
-    this._pages = pages;
-    this.setPages = function (pages){
-        if(pages <= 0 || pages >= 32)
-        throw "Количество страниц не более 32";
-        _pages = pages;
-    };
-    this.getPages = function (){
-        return _pages;
-    };
-    this.getYear = function(){
-        return this.year;
-    };
-};
+/* function myFunction1() {
+    this.name.value = "";
+    this.surname.value = "";
+    this.secondName.value = "";
+    this.age.value = "";
+    this.profAge.value = "";
+    this.date.value = "";
+} */
 
-var journal1 = new Journal('№ 11');
-journal1.label = 'Print';
-journal1.year = '2001';
-journal1.id = '382';
-journal1.pages = '28';
-journal1._pages = '28';
 
-var journal2 = new Journal('№ 12');
-journal2.label = 'New print';
-journal2.year = '2004';
-journal2.id = '301';
-journal2.pages = '35';
-journal2._pages = '35';
+    function myFunction2() {
+    var element = document.getElementById("myTable");
+    document.getElementById("myTable").removeChild(element.lastChild);
+  }
+  
 
-console.log(journal1.volume);
-console.log(journal2.volume);
+    /* function myFunction2() {
+    var newLine = document.createElement("tr");
+    newLine = document.getElementById("myTD");
+    document.getElementById("myTable").appendChild(newLine);
+    } */ 
 
-console.log(journal1.label);
-console.log(journal2.label);
-
-console.log(journal1.getYear());
-console.log(journal2.getYear());
-
-console.log(journal1.getPages());
-console.log(journal2.getPages());

@@ -2,11 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
+    <div class="main">
+    <div class="field">
+            <label for="name">Имя</label>
+            <input id="name" type="text">
+    </div>
+    <div class="field">
+            <label for="surname">Фамилия</label>
+            <input id="surname" type="text">
+    </div>
+    <div class="field">
+            <label for="secondName">Отчество</label>
+            <input id="secondName" type="text">
+    </div>
+    <div class="field">
+            <label for="age">Возраст</label>
+            <input id="age" type="text">
+    </div>
+    <div class="field">
+            <label for="profAge">Стаж</label>
+            <input id="profAge" type="text">
+        </div>
+    <div class="field">
+            <label for="date">Дата принятия на работу</label>
+            <input id="date" type="text">
+        </div>
+        <div class="field">
+                <label for="prof">Профессия</label>
+                <input id="prof" type="text">
+        </div>
+        <div class="field">
+                <label for="spec">Специальность</label>
+                <input id="spec" type="text">
+        </div>
+    </div>
     
+    <button id="btn">Работник</button>
+
+        <p><button id="btn2">Специалист</button></p>
+    
+        <!-- <p><a href="1.html"></a></p> -->
+    
+        <p><button onclick="myFunction2()">Очистить</button></p>
+       
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>Работник</h2>
+
+     <table id="myTable" border="1">
+        <tr>
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Отчество</td>
+            <td>Возраст</td>
+            <td>Стаж</td>
+            <td>Дата принятия на работу</td>
+        </tr>
+        
+        <tr id="newTD">
+           <td id="nam"></td>
+           <td id="sur"></td>
+           <td id="sn"></td>
+           <td id="ag"></td>
+           <td id="pa"></td>
+           <td id="dat"></td> 
+        </tr>
+        
+    </table>
+
+    <table id="newTable" border="1">
+        <tr>
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Отчество</td>
+            <td>Возраст</td>
+            <td>Стаж</td>
+            <td>Дата принятия на работу</td>
+            <td>Профессия</td>
+            <td>Специальность</td>
+        </tr>
+
+        <h2>Специалист</h2>
+
+        <tr id="myTD">
+                <td id="nam"></td>
+                <td id="sur"></td>
+                <td id="sn"></td>
+                <td id="ag"></td>
+                <td id="pa"></td>
+                <td id="dat"></td>
+                <td id="pr"></td>
+                <td id="sp"></td> 
+         </tr>
+                
+    </table>
+
+
     <script src="./script.js"></script>
 </body>
 </html>
