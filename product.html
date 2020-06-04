@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="styleSearch.css">
+</head>
+<body>
+    <section>
+        <div>
+            <input id="setValue" type="text">
+            <button onclick="searchFunction()">Найти</button>
+            <button onclick="fruitSelector()">Фрукты</button>
+            <button onclick="vegetableSelector()">Овощи</button>
+            <button onclick="berrySelector()">Ягоды</button>
+            </div>
+    </section>
+    <br>
+
+<section>
+    <div class="field">
+        <label for="lowPrice">Цена от</label>
+        <input id="lowPrice" type="text">
+</div>
+
+<div class="field">
+        <label for="highPrice">Цена до</label>
+        <input id="highPrice" type="text">
+</div>
+<br>
+
+    <div>
+        <button onclick="priceSelector()">Отсортировать по цене</button>
+    </div>
+    <br>
+
+    <div>
+        <button onclick="priceHigh()">Расположить по возрастанию цены</button>
+    </div>
+    <br>
+
+    <div>
+        <button onclick="priceLow()">Расположить по убыванию цены</button>
+    </div>
+    <br>
+    
+    <div>
+        <button onclick="removeAll()">Удалить выбранное</button>
+    </div>
+</section>
+
+    <h3>Отобранные товары</h3>
+    <div class="catalog_counter2">0</div>
+    <section id="one" class="container_products2">
+               
+    </section>
+
+     <p id="out_arr"></p>
+
+    <script src="./script.js"></script>
+    <script src="./store.js"></script>
+    <script src="./catalog.js"></script>
+    <script src="./search.js"></script>
+</body>
+</html>

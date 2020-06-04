@@ -1,0 +1,22 @@
+.container_products{
+    height: 100vh;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container_products .item{
+    width: 250px;
+    border: 2px solid gray;
+    border-radius: 20px;
+    height: 300px;
+    text-align: center;
+}
+
+.container_products .image{
+    background-image: url('./images/orange.jpg');
+    height: 200px;
+    background-size: cover;
+    border-radius: 10px;
+}
