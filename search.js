@@ -35,48 +35,48 @@ return catalogProduct2
   function vegetableSelector() {
     /* let elements = document.querySelector('.container_products2');
     elements.remove; */
-    catalogProduct3 = catalogProduct.filter(function(elem) {
+    catalogProduct2 = catalogProduct.filter(function(elem) {
     return elem.category == 'vegetable';
 })
-console.log(catalogProduct3);
-let searchProducts = new AllProducts('.container_products2', catalogProduct3, '.catalog_counter2');
-return catalogProduct3
+console.log(catalogProduct2);
+let searchProducts = new AllProducts('.container_products2', catalogProduct2, '.catalog_counter2');
+return catalogProduct2
   }
 
   function berrySelector() {
-    catalogProduct4 = catalogProduct.filter(function(elem) {
+    catalogProduct2 = catalogProduct.filter(function(elem) {
     return elem.category == 'berry';
 })
-console.log(catalogProduct4);
-let searchProducts = new AllProducts('.container_products2', catalogProduct4, '.catalog_counter2');
-return catalogProduct4
+console.log(catalogProduct2);
+let searchProducts = new AllProducts('.container_products2', catalogProduct2, '.catalog_counter2');
+return catalogProduct2
   }
 
   function priceSelector() {
-    catalogProduct5 = catalogProduct.filter(function(elem) {
+    catalogProduct2 = catalogProduct2.filter(function(elem) {
     return elem.price > document.getElementById('lowPrice').value && elem.price < document.getElementById('highPrice').value;
 })
-console.log(catalogProduct5);
-let searchProducts = new AllProducts('.container_products2', catalogProduct5, '.catalog_counter2');
-return catalogProduct5
+console.log(catalogProduct2);
+let searchProducts = new AllProducts('.container_products2', catalogProduct2, '.catalog_counter2');
+return catalogProduct2
 }
 
 function priceHigh() {
-  catalogProduct6 = catalogProduct2.sort(function(a, b) {
+  catalogProduct2 = catalogProduct2.sort(function(a, b) {
     return a.price - b.price;
 })
-console.log(catalogProduct6);
-let searchProducts = new AllProducts('.container_products2', catalogProduct6, '.catalog_counter2');
-return catalogProduct6
+console.log(catalogProduct2);
+let searchProducts = new AllProducts('.container_products2', catalogProduct2, '.catalog_counter2');
+return catalogProduct2
 }
 
 function priceLow() {
-  catalogProduct7 = catalogProduct.sort(function(a, b) {
+  catalogProduct2 = catalogProduct2.sort(function(a, b) {
   return b.price - a.price;
 })
-console.log(catalogProduct7);
-let searchProducts = new AllProducts('.container_products2', catalogProduct7, '.catalog_counter2');
-return catalogProduct7
+console.log(catalogProduct2);
+let searchProducts = new AllProducts('.container_products2', catalogProduct2, '.catalog_counter2');
+return catalogProduct2
 }
 
 
@@ -87,9 +87,23 @@ return catalogProduct7
 }
 
 
+function sayHi(phrase, who) {
+  alert( phrase + ', ' + who );
+}
 
+setTimeout(sayHi, 1000, "Привет", "Джон");
 
  
+let promise = new Promise(function(resolve, reject) {
+  setTimeout(() => reject(new Error("Promise whoops!")), 1500);
+}); // reject запустит вторую функцию, переданную в .then
+promise.then(
+  result => alert(result), // не будет запущена
+  error => alert(error) // выведет "Error: Whoops!" спустя одну секунду
+);
+
+
+
 /* let searchProducts = []; */
 /* let searchProducts = ''; */
 /* window.location.reload(); */
