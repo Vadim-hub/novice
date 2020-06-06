@@ -1,17 +1,3 @@
-
-function myFunction1() {
-    allFruits = catalogProduct.map(function(elem){
-        return {
-            id: elem.id,
-            name: elem.name,
-            img: elem.img,
-            price: elem.price
-        }
-    })
-    console.log(allFruits);
-    return allFruits;
-  }
-
   let getValue = document.getElementById('setValue');
 
   function searchFunction() {
@@ -96,16 +82,29 @@ elements.remove();
 return elements;
 }
 
-
-/* function removeAll() {
-let elements = berrySelector(); // (3) [{…}, {…}, {…}]
-console.log(Array.isArray(elements)); // true
-console.log(elements instanceof Array); // true
-console.log(elements instanceof Object); // true
-console.log(elements instanceof AllProducts); // false
-elements = []; // метод обнуления массива
-
-return elements;
+function myFruits() {
+  catalogProduct3 = catalogProduct.filter(function(elem) {
+  return elem.category == 'fruit';
+})
+console.log(catalogProduct3);
+let searchProducts = new AllProducts('.container_products3', catalogProduct3, '.catalog_counter3');
+return catalogProduct3
 }
 
-let z = removeAll() // [] */ 
+function myVegetables() {
+  catalogProduct3 = catalogProduct.filter(function(elem) {
+  return elem.category == 'vegetable';
+})
+console.log(catalogProduct3);
+let searchProducts = new AllProducts('.container_products3', catalogProduct3, '.catalog_counter3');
+return catalogProduct3
+}
+
+function myBerries() {
+  catalogProduct3 = catalogProduct.filter(function(elem) {
+  return elem.category == 'berry';
+})
+console.log(catalogProduct3);
+let searchProducts = new AllProducts('.container_products3', catalogProduct3, '.catalog_counter3');
+return catalogProduct3
+}

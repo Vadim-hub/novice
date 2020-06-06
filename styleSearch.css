@@ -1,6 +1,6 @@
 .container_products2{
     height: 100vh;
-    background-color: bisque;
+    background-color: whitesmoke;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -20,3 +20,32 @@
     background-size: cover;
     border-radius: 10px;
 }
+
+.logo{
+    font-size: 40px;
+    font-family: 'Lobster', cursive;
+    color: rgb(163, 51, 74);
+    text-decoration: none;
+  }
+
+  .menu {
+    text-align: left;
+    }
+    .menu__links-item {
+    display: inline-block;
+    color: green;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    line-height: 35px;
+    padding: 0 15px;
+	  text-decoration: none;
+    }
+
+    p{
+        text-align: center;
+        font-size: 25px;
+        }
+
+        body{
+            background-color: whitesmoke;
+            }
