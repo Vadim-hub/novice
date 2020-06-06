@@ -3,7 +3,7 @@ class AllProducts{
         this.containerProducts = document.querySelector(containerProducts);
         this.catalogProducts = catalogProducts;
         this.catalogCounter = document.querySelector(catalogCounter);
-        this.creatProducts();
+        this.createProducts();
     };
 
     /* <div class="item">
@@ -13,7 +13,7 @@ class AllProducts{
     <button class="btn">В корзину</button>
     </div> */
 
-    creatProducts(){
+    createProducts(){
         let wrapper = document.createElement('slot');
         let products = store.getProducts();
         this.catalogCounter.innerHTML = products.length;
@@ -27,26 +27,26 @@ class AllProducts{
                 activeText = 'Удалить из корзины';
             }
 
-            let item = this.getProductItem({
+            let item = createProduct.getProductItem({
                 nameTag: 'div',
                 nameClass: 'item'
             });
-            let name = this.getProductItem({
+            let name = createProduct.getProductItem({
                 nameTag: 'div',
                 nameClass: 'name',
                 contentText: this.catalogProducts[i].name
             });
-            let img = this.getProductItem({
+            let img = createProduct.getProductItem({
                 nameTag: 'div',
                 nameClass: 'image',
                 bgImage: `url('${this.catalogProducts[i].img}')`
             });
-            let price = this.getProductItem({
+            let price = createProduct.getProductItem({
                 nameTag: 'div',
                 nameClass: 'price',
                 contentText: this.catalogProducts[i].price
             });
-            let btn = this.getProductItem({
+            let btn = createProduct.getProductItem({
                 nameTag: 'button',
                 nameClass: 'btn',
                 contentText: activeText,
@@ -73,23 +73,6 @@ class AllProducts{
         }
         this.containerProducts.appendChild(wrapper);
     };
-
-getProductItem(card){
-    let element = document.createElement(card.nameTag);
-    if('nameClass' in card){
-        element.setAttribute('class', card.nameClass);
-    };
-    if('contentText' in card){
-        element.innerHTML = card.contentText;
-    };
-    if('bgImage' in card){
-        element.style.backgroundImage = card.bgImage;
-    };
-    if('id' in card){
-        element.setAttribute('id', card.id);
-    }
-    return element;
-};
 }
 
 let allProducts = new AllProducts('.container_products', catalogProduct, '.catalog_counter');

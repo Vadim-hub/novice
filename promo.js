@@ -50,3 +50,63 @@ previous.onclick = function() {
     pauseSlideshow();
     previousSlide();
 };
+
+var carousels = document.querySelectorAll('#carousels .carousel');
+var currentCarousel = 0;
+var carouselInterval = setInterval(nextCarousel, 2000);
+
+function nextCarousel(){
+carousels[currentCarousel].className = 'carousel';
+currentCarousel = (currentCarousel+1)%carousels.length;
+carousels[currentCarousel].className = 'carousel demonstration';
+}
+
+/* function timer(){
+    var obj=document.getElementById('timer_inp');
+    obj.innerHTML--;
+   
+    if(obj.innerHTML==0){setTimeout(function(){}, 1000)}
+    else{setTimeout(timer,1000);}
+   }
+   
+   setTimeout(timer,1000);
+   let q = timer();
+   console.log(q); */
+
+   function Timer (date) {
+    var obj=document.getElementById('timer_inp');
+    obj.innerHTML--;
+
+    var s = (new Date(date)).getTime() - (new Date()).getTime();
+    s = parseInt(s / 1000);
+
+    var h = parseInt(s / 3600);
+    s -= h * 3600;
+    var m = parseInt(s / 60);
+    s -= m * 60;
+
+    obj.innerHTML = h + ':' + m + ':' + s
+    if ((new Date(date)).getTime() >= (new Date()).getTime()) setTimeout('Timer(\'' + date + '\');', 1000);
+}
+
+Timer('June 11, 2020');
+
+  /*  const dayStop = new Date(2020, 5, 1, 0, 0, 0, 0);;
+   console.log(dayStop.getHours());
+   console.log(dayStop.getMinutes());
+   console.log(dayStop.getSeconds()); */
+
+  function getSecondsToTomorrow() {
+    let now = new Date();
+    let hour = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    let totalSecondsToday = (hour * 60 + minutes) * 60 + seconds;
+    let totalSecondsInADay = 86400;
+  
+    return totalSecondsInADay - totalSecondsToday;
+  }
+
+  let w = getSecondsToTomorrow();
+  console.log(w);
+

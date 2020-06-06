@@ -24,6 +24,8 @@ return exampleArr
 }
 
   function fruitSelector() {
+    /* let elements = document.querySelector('slot');
+    elements.remove(); */
     catalogProduct2 = catalogProduct.filter(function(elem) {
     return elem.category == 'fruit';
 })
@@ -33,8 +35,8 @@ return catalogProduct2
   }
 
   function vegetableSelector() {
-    /* let elements = document.querySelector('.container_products2');
-    elements.remove; */
+    let elements = document.querySelector('slot');
+    elements.remove();
     catalogProduct2 = catalogProduct.filter(function(elem) {
     return elem.category == 'vegetable';
 })
@@ -44,6 +46,8 @@ return catalogProduct2
   }
 
   function berrySelector() {
+    let elements = document.querySelector('slot');
+    elements.remove();
     catalogProduct2 = catalogProduct.filter(function(elem) {
     return elem.category == 'berry';
 })
@@ -53,6 +57,8 @@ return catalogProduct2
   }
 
   function priceSelector() {
+    let elements = document.querySelector('slot');
+    elements.remove();
     catalogProduct2 = catalogProduct2.filter(function(elem) {
     return elem.price > document.getElementById('lowPrice').value && elem.price < document.getElementById('highPrice').value;
 })
@@ -62,6 +68,8 @@ return catalogProduct2
 }
 
 function priceHigh() {
+  let elements = document.querySelector('slot');
+  elements.remove();
   catalogProduct2 = catalogProduct2.sort(function(a, b) {
     return a.price - b.price;
 })
@@ -71,6 +79,8 @@ return catalogProduct2
 }
 
 function priceLow() {
+  let elements = document.querySelector('slot');
+  elements.remove();
   catalogProduct2 = catalogProduct2.sort(function(a, b) {
   return b.price - a.price;
 })
@@ -79,36 +89,23 @@ let searchProducts = new AllProducts('.container_products2', catalogProduct2, '.
 return catalogProduct2
 }
 
+function removeAll() {
+let elements = document.querySelector('slot');
+elements.remove();
 
-
-  function removeAll() {
-  let elements = document.querySelector('.container_products2');
-  elements.remove
+return elements;
 }
 
 
-function sayHi(phrase, who) {
-  alert( phrase + ', ' + who );
+/* function removeAll() {
+let elements = berrySelector(); // (3) [{…}, {…}, {…}]
+console.log(Array.isArray(elements)); // true
+console.log(elements instanceof Array); // true
+console.log(elements instanceof Object); // true
+console.log(elements instanceof AllProducts); // false
+elements = []; // метод обнуления массива
+
+return elements;
 }
 
-setTimeout(sayHi, 1000, "Привет", "Джон");
-
- 
-let promise = new Promise(function(resolve, reject) {
-  setTimeout(() => reject(new Error("Promise whoops!")), 1500);
-}); // reject запустит вторую функцию, переданную в .then
-promise.then(
-  result => alert(result), // не будет запущена
-  error => alert(error) // выведет "Error: Whoops!" спустя одну секунду
-);
-
-
-
-/* let searchProducts = []; */
-/* let searchProducts = ''; */
-/* window.location.reload(); */
-/* window.localStorage.clear(); */
-/* window.sessionStorage.clear(); */
-/* storage.clear(); */
-/* sessionStorage.removeItem("searchProducts");
-localStorage.removeItem("searchProducts"); */
+let z = removeAll() // [] */ 
