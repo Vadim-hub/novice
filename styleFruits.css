@@ -49,3 +49,10 @@ body{
         text-align: center;
         font-size: 25px;
         }
+
+    footer {
+        justify-content: center;
+        padding: 6px;
+        background-color: #cedce9;
+        color: #fff;
+    }

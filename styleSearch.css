@@ -46,6 +46,13 @@
         font-size: 25px;
         }
 
-        body{
-            background-color: whitesmoke;
-            }
+    body{
+        background-color: whitesmoke;
+        }
+
+    footer {
+        justify-content: center;
+        padding: 6px;
+        background-color: #cedce9;
+        color: #fff;
+    }

@@ -61,18 +61,6 @@ currentCarousel = (currentCarousel+1)%carousels.length;
 carousels[currentCarousel].className = 'carousel demonstration';
 }
 
-/* function timer(){
-    var obj=document.getElementById('timer_inp');
-    obj.innerHTML--;
-   
-    if(obj.innerHTML==0){setTimeout(function(){}, 1000)}
-    else{setTimeout(timer,1000);}
-   }
-   
-   setTimeout(timer,1000);
-   let q = timer();
-   console.log(q); */
-
    function Timer (date) {
     var obj=document.getElementById('timer_inp');
     obj.innerHTML--;
@@ -89,12 +77,7 @@ carousels[currentCarousel].className = 'carousel demonstration';
     if ((new Date(date)).getTime() >= (new Date()).getTime()) setTimeout('Timer(\'' + date + '\');', 1000);
 }
 
-Timer('June 11, 2020');
-
-  /*  const dayStop = new Date(2020, 5, 1, 0, 0, 0, 0);;
-   console.log(dayStop.getHours());
-   console.log(dayStop.getMinutes());
-   console.log(dayStop.getSeconds()); */
+Timer('June 20, 2020');
 
   function getSecondsToTomorrow() {
     let now = new Date();
@@ -109,4 +92,4 @@ Timer('June 11, 2020');
 
   let w = getSecondsToTomorrow();
   console.log(w);
-
+  

@@ -1,7 +1,11 @@
   let getValue = document.getElementById('setValue');
 
   function searchFunction() {
-  exampleArr = catalogProduct.filter(function(elem) {
+    if (document.querySelector('slot')){
+      let elements = document.querySelector('slot');
+      elements.remove();
+    }
+    exampleArr = catalogProduct.filter(function(elem) {
   return elem.name == getValue.value;
 })
 console.log(exampleArr);
@@ -10,8 +14,10 @@ return exampleArr
 }
 
   function fruitSelector() {
-    /* let elements = document.querySelector('slot');
-    elements.remove(); */
+    if (document.querySelector('slot')){
+      let elements = document.querySelector('slot');
+      elements.remove();
+    }
     catalogProduct2 = catalogProduct.filter(function(elem) {
     return elem.category == 'fruit';
 })
@@ -21,8 +27,10 @@ return catalogProduct2
   }
 
   function vegetableSelector() {
+    if (document.querySelector('slot')){
     let elements = document.querySelector('slot');
     elements.remove();
+  }
     catalogProduct2 = catalogProduct.filter(function(elem) {
     return elem.category == 'vegetable';
 })
@@ -32,8 +40,10 @@ return catalogProduct2
   }
 
   function berrySelector() {
-    let elements = document.querySelector('slot');
-    elements.remove();
+    if (document.querySelector('slot')){
+      let elements = document.querySelector('slot');
+      elements.remove();
+    }
     catalogProduct2 = catalogProduct.filter(function(elem) {
     return elem.category == 'berry';
 })
@@ -107,4 +117,13 @@ function myBerries() {
 console.log(catalogProduct3);
 let searchProducts = new AllProducts('.container_products3', catalogProduct3, '.catalog_counter3');
 return catalogProduct3
+}
+
+function blogFunction() {
+  var text = document.getElementById("story").value;
+  var ListHome = document.querySelector('#List-books');
+  var uList = document.createElement('section');
+  uList.innerHTML = text;
+  ListHome.appendChild(uList);
+  document.getElementById('story').value = '';
 }

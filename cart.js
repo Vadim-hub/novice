@@ -6,21 +6,14 @@ class Cart{
         this.createCart();
     }
 
-/* <div class="item">
-    <div class="name">Product1</div>
-    <div class="image"></div>
-    <div class="price">111</div>
-    </div> */
-
-
-createCart(){
-this.catalogCounter.addEventListener('click', function(){
+    createCart(){
+this.catalogCounter.addEventListener('click', function(){ // обращаемся к объекту cart
 cart.containerCart.style.display = 'block';
 let productsCart = cart.getProductCart();
 let wrapper = document.createElement('slot');
 wrapper.className = 'wrapper_cart';
-for(let i =0; i < productsCart.length; i++){
-    let item = createProduct.getProductItem({
+for(let i = 0; i < productsCart.length; i++){
+    let item = createProduct.getProductItem({ // this - это объект, на который ссылаемся (можно заменять на объект, которому принадлежит, тоже самое)
         nameTag: 'div',
         nameClass: 'item'
     });
@@ -48,33 +41,33 @@ for(let i =0; i < productsCart.length; i++){
 
 let close = createProduct.getProductItem({
     nameTag: 'div',
-    nameClass: 'close',
+    nameClass: 'close', // fa - найти на сайте (добавить красивую картинку)
     contentText: 'X'
 });
 
 close.addEventListener('click', function(){
-cart.containerCart.style.display = 'none';
-cart.containerCart.innerHTML = '';
+    cart.containerCart.style.display = 'none';
+    cart.containerCart.innerHTML = '';
 });
 
 cart.containerCart.appendChild(wrapper);
 cart.containerCart.appendChild(close);
 
 });
-     }
-
-     getProductCart(){
-let products = store.getProducts();
-let productsInCart = [];
-
-for(let i = 0; i < this.catalogProduct.length; i++){
-  if(products.indexOf(this.catalogProduct[i].id) !== -1){
-      productsInCart.push(this.catalogProduct[i]);
-  }  
-};
-
-return productsInCart;
-     }
 }
 
-let cart = new Cart('.container_cart', '.catalog_counter', catalogProduct)
+    getProductCart(){
+        let products = store.getProducts();
+        let productsInCart = [];
+
+        for(let i = 0; i < this.catalogProduct.length; i++){
+            if(products.indexOf(this.catalogProduct[i].id) !== -1){
+                productsInCart.push(this.catalogProduct[i]);
+            }
+        };
+
+        return productsInCart;
+}
+}
+
+let cart = new Cart('.container_cart', '.catalog_counter', catalogProduct);
