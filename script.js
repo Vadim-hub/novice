@@ -11,3 +11,5 @@ document.querySelector('#books').addEventListener('submit', function(event){ // 
 
     event.preventDefault(); // отменить всплытие чтобы обработчик правильно работал
 });
+
+
