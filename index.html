@@ -2,11 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework B1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <h1>Tasks for today</h2>
+    <div class="container">
+        <form id="books">
+        <input type="text" id="title" size="50">
     
-    <script src="./script.js"></script>
+</div>
+
+    <div class="btn">
+        <input type="submit" value="Добавить задачу">
+    </div>
+</form>
+    
+    <ol id="List-tasks">
+        <ul class="head_list">
+            <li>Tasks for today</li>
+        </ul>
+    </ol>    
+    
+    <script src="task.js"></script> <!-- код считывается сверху вниз. Данный файл - это добавление данных-->
+    <script src="viewtasks.js"></script> <!-- методы генерирования данных -->
+    <script src="script.js"></script> <!-- в этом файле можно обращаться к предыдущему файлу -->
 </body>
 </html>
