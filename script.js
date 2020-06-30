@@ -8,6 +8,8 @@ document.querySelector('#books').addEventListener('submit', function(event){ // 
     viewTask.addTask(task);
     viewTask.clear();
     
+    var len = document.querySelector('ul').children.length;
+    document.getElementById("counter").innerHTML = len;
 
     event.preventDefault(); // отменить всплытие чтобы обработчик правильно работал
 });

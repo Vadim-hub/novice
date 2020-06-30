@@ -17,15 +17,10 @@ margin-left: 25px;
     justify-content: center;  
 }
 
-/* section{
+#header{
     display: flex;
-    justify-content: flex-end;
-    border: 3px solid;
-    border-radius: 5px;
-    width: 500px;
-    height: 30px;
-    text-align: center;
-} */
+    justify-content: flex-end;     
+}
 
 article{
     text-align: left;
@@ -44,3 +39,8 @@ li{
     text-align: center;
     list-style-type: none;
 }
+
+.header{
+    display: inline;    
+}
+

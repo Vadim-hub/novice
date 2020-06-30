@@ -10,7 +10,8 @@ ViewTasks.prototype.addTask = function(type) {
 
     ulList.innerHTML = '<article>' + type.title + '</article>' + // заполним созданный элемент данными (генерируем данные)
     '<button class="delete">Удалить</button>' +
-    '<button class="important">Важное</button>';
+    '<button class="important">Важное</button>' +
+    '<button class="done">Сделано</button>';
           
        
     listAll.appendChild(ulList);  // вывести сгенерированные данные на страницу (добавить элемент)
@@ -22,6 +23,34 @@ ViewTasks.prototype.addTask = function(type) {
 
     document.querySelector(".delete").addEventListener("click", deleteFunction);
     document.querySelector(".important").addEventListener("click", importantFunction);
+    document.querySelector(".done").addEventListener("click", doneFunction);
+
+    var len = document.querySelector('ul').children.length;
+    document.getElementById("counter").innerHTML = len;
+
+    function deleteFunction() {
+        ulList.id = "newDelete"
+        let elem = document.getElementById("newDelete");
+        elem.remove();
+    };
+
+    function importantFunction() {
+        ulList.id = "newImportant";
+        let elem = document.getElementById("newImportant");
+        elem.style.background = 'red';
+        
+        let lenAlert = document.getElementById("counterAlert");
+        lenAlert = 0;
+        lenAlert = ++lenAlert;
+        document.getElementById("counterAlert").innerHTML = lenAlert;
+    };
+
+    function doneFunction() {
+        ulList.id = "newDone";        
+        document.getElementById("newDone").style.textDecoration = "line-through";      
+                
+    };
+
 };
 
 // опишем метод = подсказка ввиде сообщения
@@ -38,25 +67,5 @@ ViewTasks.prototype.getMessage = function(message, nameCl){
 
 // опишем метод = очищение данных
 ViewTasks.prototype.clear = function(){
-document.querySelector('#title').value = ''; // обращаемся к элементу чтобы получить значение value и очистить поле
+    document.querySelector('#title').value = ''; // обращаемся к элементу чтобы получить значение value и очистить поле
 };
-
-/* function deleteFunction() {
-    let parent = document.querySelector('section');
-    let elem = document.querySelector('section');
-    
-    parent.removeChild(elem);
-    }; */
-
-    function deleteFunction() {
-        let elem = document.getElementById(ulList.id);
-        elem.parentElement.removeChild(elem);
-        /* elem.remove(); */
-    };
-
-    function importantFunction() {
-        ulList.id = "new";
-        let elem = document.getElementById("new");
-        elem.style.background = 'red';
-        /* document.getElementById("new").style.color = "red"; */        
-    };      
