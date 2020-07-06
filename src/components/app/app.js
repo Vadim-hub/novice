@@ -20,14 +20,21 @@ class App extends React.Component {
     ],
   };
 
-  // инициализируем в главной компоненте наш метод onDelete, сгенерировали наше событие которое передаем потом дочерним компонентам в виде пропса
+  // инициализируем в главной компоненте наши методы onDelete и onImportant, сгенерировали наше событие которое передаем потом дочерним компонентам в виде пропса
   onDelete(id) {
     console.log(id);
   }
 
-  onImportant(id) {
+  onImportant = (id) => {
     console.log(id);
-  }
+    const imprt = this.state.todolist.filter((elem) => {
+      return elem.id === id;
+    });
+    /* console.log(imprt);
+    this.setState((prevState) => {
+      return {this.state.todolist.importantOk: !prevState.importantOk}
+    }) */
+  };
 
   render() {
     const { todolist } = this.state;

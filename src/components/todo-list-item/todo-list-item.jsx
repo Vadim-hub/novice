@@ -24,24 +24,23 @@ class ToDoListItem extends React.Component {
     let classNameText = "task-text"; // название класса вынесено в переменную
 
     let clickHandler = () => {
-      /* this.state.doneOk = true; // меняем состояние при нажатии c false на true
-      console.log(this.state); */
+      // меняем состояние при нажатии c false на true
       this.setState(
         // метод setState изменяет состояние при нажатии c false на true (по умолчанию у данного метода первый параметр - это предыдущее состояние)
         /* {doneOk: true,} */
         (prevState) => {
           // более правильно для изменения состояния использовать функцию В качестве параметра передает те поля которые нужно изменить
           return {
-            doneOk: !prevState.doneOk, // ! - менять предыдущее состояние на обратное
+            doneOk: !prevState.doneOk, // ! - менять предыдущее состояние на обратное (! - "не" чтобы менять в обе стороны)
           };
         }
       );
     };
 
     let clickHandler2 = () => {
-      this.setState((prevState2) => {
+      this.setState((prevState) => {
         return {
-          importantOk: !prevState2.importantOk,
+          importantOk: !prevState.importantOk,
         };
       });
     };
@@ -57,27 +56,6 @@ class ToDoListItem extends React.Component {
     if (this.state.doneOk) {
       classNameText += " task_is_done";
     }
-    return (
-      <div className="task-item">
-        <span
-          className={classNameText}
-          onClick={() => {
-            clickHandler();
-          }}
-        >
-          {message}
-        </span>{" "}
-        <div className="controls">
-          <i
-            className="fa fa-trash redcolor"
-            onClick={() => {
-              removeHandler();
-            }}
-          />
-          <i className="fa fa-star" />
-        </div>
-      </div>
-    );
 
     if (this.state.importantOk) {
       classNameText += " important";
@@ -87,62 +65,15 @@ class ToDoListItem extends React.Component {
         <span
           className={classNameText}
           onClick={() => {
+            clickHandler();
+          }}
+          onClick={() => {
             clickHandler2();
           }}
         >
           {message}
         </span>{" "}
-        <div className="controls">
-          <i
-            className="fa fa-trash redcolor"
-            onClick={() => {
-              removeHandler2();
-            }}
-          />
-          <i className="fa fa-star" />
-        </div>
-      </div>
-    );
-  }
-}
-
-/* const ToDoListItem = (props) => {
-  const { message } = props;
-  let classNameText = "task-text"; // название класса вынесено в переменную
-  let clickHandler = () => {
-    console.log(message);
-  };
-  return (
-    <div className="task-item">
-      <span
-        className={classNameText}
-        onClick={() => {
-          clickHandler();
-        }}
-      
-        {message}
-      </span>{" "}
-      /* класс задается через переменную ранее введенную */
-/* <div className="controls">
-        <i className="fa fa-trash red-color" />
-        <i className="fa fa-star" />
-      </div>
-    </div>
-  );
-}; */
-
-/* switch (this.state) {
-  case doneOk:
-    return (
-      <div className="task-item">
-        <span
-          className={classNameText}
-          onClick={() => {
-            clickHandler();
-          }}
-        >
-          {message}
-        </span>{" "}
+        {/* класс задается через переменную ранее введенную */}
         <div className="controls">
           <i
             className="fa fa-trash redcolor"
@@ -150,36 +81,16 @@ class ToDoListItem extends React.Component {
               removeHandler();
             }}
           />
-          <i className="fa fa-star" />
-        </div>
-      </div>
-    );
-    break;
-  case importantOk:
-    return (
-      <div className="task-item">
-        <span
-          className={classNameText}
-          onClick={() => {
-            clickHandler2();
-          }}
-        >
-          {message}
-        </span>{" "}
-        <div className="controls">
           <i
-            className="fa fa-trash redcolor"
+            className="fa fa-star"
             onClick={() => {
               removeHandler2();
             }}
           />
-          <i className="fa fa-star" />
         </div>
       </div>
     );
-    break;
-  default:
-    console.log("Sorry, we are out.");
-} */
+  }
+}
 
 export default ToDoListItem;
