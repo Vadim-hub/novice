@@ -22,6 +22,7 @@ class ToDoListItem extends React.Component {
     console.log(this.props); // вывести все props элемента
     const { message, onDelete, onImportant } = this.props;
     let classNameText = "task-text"; // название класса вынесено в переменную
+    let classNameStar = "task-text";
 
     let clickHandler = () => {
       // меняем состояние при нажатии c false на true
@@ -62,18 +63,23 @@ class ToDoListItem extends React.Component {
     }
     return (
       <div className="task-item">
+        {/* класс задается через переменную  classNameText ранее введенную */}
         <span
           className={classNameText}
           onClick={() => {
             clickHandler();
           }}
+        >
+          {message}
+        </span>{" "}
+        <span
+          className={classNameStar}
           onClick={() => {
             clickHandler2();
           }}
         >
           {message}
         </span>{" "}
-        {/* класс задается через переменную ранее введенную */}
         <div className="controls">
           <i
             className="fa fa-trash redcolor"
