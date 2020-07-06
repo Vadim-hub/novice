@@ -69,23 +69,16 @@ class ToDoListItem extends React.Component {
           onClick={() => {
             clickHandler();
           }}
-        >
-          {message}
-        </span>{" "}
-        <span
           className={classNameStar}
-          onClick={() => {
-            clickHandler2();
-          }}
         >
           {message}
         </span>{" "}
         <div className="controls">
           <i
             className="fa fa-trash redcolor"
-            onClick={() => {
+            /* onClick={() => {
               removeHandler();
-            }}
+            }} */
           />
           <i
             className="fa fa-star"
