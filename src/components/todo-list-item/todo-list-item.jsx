@@ -90,8 +90,11 @@ class ToDoListItem extends React.Component {
           <i
             className="fa fa-star"
             onClick={() => {
-              removeHandler2();
+              clickHandler2();
             }}
+            /* onClick={() => {
+              removeHandler2();
+            }} */
           />
         </div>
       </div>
