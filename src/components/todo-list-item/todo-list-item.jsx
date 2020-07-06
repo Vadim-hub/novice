@@ -59,11 +59,11 @@ class ToDoListItem extends React.Component {
     }
 
     if (this.state.importantOk) {
-      classNameText += " important";
+      classNameStar += " important";
     }
     return (
       <div className="task-item">
-        {/* класс задается через переменную  classNameText ранее введенную */}
+        {/* класс (className) задается через переменную (classNameText) ранее введенную */}
         <span
           className={classNameText}
           onClick={() => {
