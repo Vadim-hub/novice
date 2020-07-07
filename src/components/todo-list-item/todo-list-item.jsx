@@ -75,10 +75,10 @@ class ToDoListItem extends React.Component {
         </span>{" "}
         <div className="controls">
           <i
-            className="fa fa-trash redcolor"
-            /* onClick={() => {
+            className="fa fa-trash"
+            onClick={() => {
               removeHandler();
-            }} */
+            }}
           />
           <i
             className="fa fa-star"
