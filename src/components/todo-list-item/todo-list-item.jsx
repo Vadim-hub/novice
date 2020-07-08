@@ -22,7 +22,6 @@ class ToDoListItem extends React.Component {
     console.log(this.props); // вывести все props элемента
     const { message, onDelete, onImportant } = this.props;
     let classNameText = "task-text"; // название класса вынесено в переменную
-    let classNameStar = "task-text";
 
     let clickHandler = () => {
       // меняем состояние при нажатии c false на true
@@ -46,20 +45,12 @@ class ToDoListItem extends React.Component {
       });
     };
 
-    let removeHandler = () => {
-      this.props.onDelete();
-    };
-
-    let removeHandler2 = () => {
-      this.props.onImportant();
-    };
-
     if (this.state.doneOk) {
       classNameText += " task_is_done";
     }
 
     if (this.state.importantOk) {
-      classNameStar += " important";
+      classNameText += " important";
     }
     return (
       <div className="task-item">
@@ -69,25 +60,16 @@ class ToDoListItem extends React.Component {
           onClick={() => {
             clickHandler();
           }}
-          className={classNameStar}
         >
           {message}
         </span>{" "}
         <div className="controls">
-          <i
-            className="fa fa-trash"
-            onClick={() => {
-              removeHandler();
-            }}
-          />
+          <i className="fa fa-trash" />
           <i
             className="fa fa-star"
             onClick={() => {
               clickHandler2();
             }}
-            /* onClick={() => {
-              removeHandler2();
-            }} */
           />
         </div>
       </div>
