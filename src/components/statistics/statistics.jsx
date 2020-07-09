@@ -11,7 +11,7 @@ const Statistics = (props) => {
         Active: <span id="important-counter">{props.toDo}</span>
       </p>
       <p>
-        Important: <span id="important2-counter">0</span>
+        Important: <span id="important2-counter">{props.important}</span>
       </p>
     </div>
   );

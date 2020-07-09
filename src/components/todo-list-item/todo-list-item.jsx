@@ -4,15 +4,15 @@ import "./todo-list-item.scss";
 /* import s from "./todo-list.module.css"; */
 
 class ToDoListItem extends React.Component {
-  /* constructor() {
+  constructor() {
     // метод который хранит все те параметры которые передаются классу
     super();
-    this.state = {
-      doneOk: false,
+    /* this.state = {
+      doneOk: false, // false - по умолчанию состояние незавершенное
       importantOk: false,
-    };
-  } */
-  // Более простой вариант объявления локального состояния компоненты
+    }; */
+  }
+  // Более просто простой вариант объявления состояния компоненты
   /* state = {
     doneOk: false,
   }; */
@@ -22,7 +22,6 @@ class ToDoListItem extends React.Component {
     console.log(this.props); // вывести все props элемента
     const { message, important, done, onImportant } = this.props;
     let classNameText = "task-text"; // название класса вынесено в переменную
-    let classNameStar = "task-text";
 
     let clickHandler = () => {
       // передаем ввиде пропса метод onToggle который изменяет в обе стороны состоние активное/неактивное
@@ -39,6 +38,7 @@ class ToDoListItem extends React.Component {
     };
 
     let clickHandler2 = () => {
+      this.props.onToggle2();
       /* this.setState((prevState) => {
         return {
           important: !prevState.important,
@@ -50,16 +50,12 @@ class ToDoListItem extends React.Component {
       this.props.onDelete();
     };
 
-    let removeHandler2 = () => {
-      this.props.onImportant();
-    };
-
     if (done) {
       classNameText += " task_is_done";
     }
 
     if (important) {
-      classNameStar += " important";
+      classNameText += " important";
     }
     return (
       <div className="task-item">
@@ -69,7 +65,6 @@ class ToDoListItem extends React.Component {
           onClick={() => {
             clickHandler();
           }}
-          className={classNameStar}
         >
           {message}
         </span>{" "}
@@ -85,9 +80,6 @@ class ToDoListItem extends React.Component {
             onClick={() => {
               clickHandler2();
             }}
-            /* onClick={() => {
-              removeHandler2();
-            }} */
           />
         </div>
       </div>
