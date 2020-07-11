@@ -36,42 +36,54 @@ class Fields extends React.Component {
   onSubmitUsername = (e) => {
     e.preventDefault(); // прописываем метод чтобы отменить стандартные действия браузера (по умолчанию происходит перезагрузка)
     this.props.onAdded(this.state.username);
-    // label - просто пустая строка (чтобы она очищалась)
-    /* this.setState({
-      username: "", 
-    }); */
   };
 
   onSubmitEmail = (e) => {
     e.preventDefault();
     this.props.onAdded(this.state.email);
-    /* this.setState({
-      email: "",
-    }); */
   };
 
   onSubmitPassword = (e) => {
     e.preventDefault();
     this.props.onAdded(this.state.password);
-    /* this.setState({
-      password: "",
-    }); */
+  };
+
+  getData = (e) => {
+    e.preventDefault();
+    const readyData = this.state;
+    console.log(readyData);
+
+    async function postData(url, data) {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(data), // данные могут быть 'строкой' или {объектом}!
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const json = await response.json();
+        console.log("Успех:", JSON.stringify(json));
+      } catch (error) {
+        console.error("Ошибка:", error);
+      }
+    }
+
+    postData("https://example.com/answer", readyData).then((data) => {
+      console.log(data);
+    });
   };
 
   render() {
     return (
       // onSubmit обработчик на получение данных
-      <form
-        className="new-task"
-        onSubmit={this.onSubmitUsername}
-        onSubmit={this.onSubmitEmail}
-        onSubmit={this.onSubmitPassword}
-      >
+      <form className="new-task">
         <input
           type="text"
           id="new-task-input"
           placeholder="Username"
           value={this.state.username}
+          onSubmit={this.onSubmitUsername}
           onChange={this.onChangeUsername} // обработчик который реагирует на каждое изменение вызывает на тэг <input> (отлавливает данные)
         />
         <input
@@ -79,6 +91,7 @@ class Fields extends React.Component {
           id="new-task-input"
           placeholder="Email"
           value={this.state.email}
+          onSubmit={this.onSubmitEmail}
           onChange={this.onChangeEmail}
         />
         <input
@@ -86,14 +99,15 @@ class Fields extends React.Component {
           id="new-task-input"
           placeholder="Password"
           value={this.state.password}
+          onSubmit={this.onSubmitPassword}
           onChange={this.onChangePassword}
         />
-        <button id="new-task-button">Sign up</button>
+        <button id="new-task-button" onClick={this.getData}>
+          Sign up
+        </button>
       </form>
     );
   }
 }
-
-console.log(Fields.state);
 
 export default Fields;
