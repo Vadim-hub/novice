@@ -1,5 +1,5 @@
 import React from "react";
-import "./fields-style.scss";
+import "./fields-style.css";
 
 class Fields extends React.Component {
   // установим состояние state потому что нам нужно отслеживать данные которые будем вводить
@@ -36,25 +36,26 @@ class Fields extends React.Component {
   onSubmitUsername = (e) => {
     e.preventDefault(); // прописываем метод чтобы отменить стандартные действия браузера (по умолчанию происходит перезагрузка)
     this.props.onAdded(this.state.username);
-    this.setState({
-      username: "", // label - просто пустая строка (чтобы она очищалась)
-    });
+    // label - просто пустая строка (чтобы она очищалась)
+    /* this.setState({
+      username: "", 
+    }); */
   };
 
   onSubmitEmail = (e) => {
     e.preventDefault();
     this.props.onAdded(this.state.email);
-    this.setState({
+    /* this.setState({
       email: "",
-    });
+    }); */
   };
 
   onSubmitPassword = (e) => {
     e.preventDefault();
     this.props.onAdded(this.state.password);
-    this.setState({
+    /* this.setState({
       password: "",
-    });
+    }); */
   };
 
   render() {
@@ -62,35 +63,37 @@ class Fields extends React.Component {
       // onSubmit обработчик на получение данных
       <form
         className="new-task"
-        onSubmitUsername={this.onSubmitUsername}
-        onSubmitEmail={this.onSubmitEmail}
-        onSubmitPassword={this.onSubmitPassword}
+        onSubmit={this.onSubmitUsername}
+        onSubmit={this.onSubmitEmail}
+        onSubmit={this.onSubmitPassword}
       >
         <input
           type="text"
           id="new-task-input"
           placeholder="Username"
           value={this.state.username}
-          onChangeUsername={this.onChangeUsername} // обработчик который реагирует на каждое изменение вызывает на тэг <input> (отлавливает данные)
+          onChange={this.onChangeUsername} // обработчик который реагирует на каждое изменение вызывает на тэг <input> (отлавливает данные)
         />
         <input
           type="text"
           id="new-task-input"
           placeholder="Email"
           value={this.state.email}
-          onChangeEmail={this.onChangeEmail}
+          onChange={this.onChangeEmail}
         />
         <input
           type="text"
           id="new-task-input"
           placeholder="Password"
           value={this.state.password}
-          onChangePassword={this.onChangePassword} // обработчик который реагирует на каждое изменение вызывает на тэг <input> (отлавливает данные)
+          onChange={this.onChangePassword}
         />
         <button id="new-task-button">Sign up</button>
       </form>
     );
   }
 }
+
+console.log(Fields.state);
 
 export default Fields;
