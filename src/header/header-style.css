@@ -1,0 +1,18 @@
+.App-header {
+  background-color: whitesmoke;
+  min-height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-logo {
+  color: green;
+  font-weight: bolder;
+}
+
+.Header-items {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
