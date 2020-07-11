@@ -36,29 +36,20 @@ class Fields extends React.Component {
   onSubmitUsername = (e) => {
     e.preventDefault(); // прописываем метод чтобы отменить стандартные действия браузера (по умолчанию происходит перезагрузка)
     this.props.onAdded(this.state.username);
-    // label - просто пустая строка (чтобы она очищалась)
-    /* this.setState({
-      username: "", 
-    }); */
   };
 
   onSubmitEmail = (e) => {
     e.preventDefault();
     this.props.onAdded(this.state.email);
-    /* this.setState({
-      email: "",
-    }); */
   };
 
   onSubmitPassword = (e) => {
     e.preventDefault();
     this.props.onAdded(this.state.password);
-    /* this.setState({
-      password: "",
-    }); */
   };
 
-  getData = () => {
+  getData = (e) => {
+    e.preventDefault();
     const data = this.state;
     console.log(data);
   };
