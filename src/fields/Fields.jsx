@@ -63,13 +63,21 @@ class Fields extends React.Component {
           },
         });
         const json = await response.json();
-        console.log("Успех:", JSON.stringify(json));
+        if (this.state.username === "") {
+          alert("Вы не ввели username");
+        } else if (this.state.email === "") {
+          alert("Вы не ввели email");
+        } else if (this.state.password === "") {
+          alert("Вы не ввели password");
+        } else {
+          console.log("Успех:", JSON.stringify(json));
+        }
       } catch (error) {
         console.error("Ошибка:", error);
       }
     }
 
-    postData("https://example.com/answer", readyData).then((data) => {
+    postData("http://localhost:3000/posts", readyData).then((data) => {
       console.log(data);
     });
   };
