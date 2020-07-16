@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "url": "http://localhost:3000/posts"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1,
+      "url": "http://localhost:3000/comments"
+    }
+  ],
+  "profile": {
+    "name": "typicode",
+    "url": "http://localhost:3000/profile"
+  }
+}
