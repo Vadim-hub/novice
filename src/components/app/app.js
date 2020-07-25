@@ -16,7 +16,6 @@ import {
 //import PersonDetails from "../item-details/item-details";
 import SwapiService from "../../services/swapi-service";
 import Row from "../row/row";
-import ErrorBoundry from "../error-boundry/error-boundry";
 import { SwapiServiceProvider } from "../../context";
 import TestService from "../../services/test-service";
 
